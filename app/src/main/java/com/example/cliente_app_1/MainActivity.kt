@@ -13,6 +13,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.cliente_app_1.model.Cliente
+import com.example.cliente_app_1.screens.ListaDeClientes
 import com.example.cliente_app_1.service.Conexao
 import com.example.cliente_app_1.ui.theme.Clienteapp1Theme
 import kotlinx.coroutines.Dispatchers
@@ -29,16 +30,18 @@ class MainActivity : ComponentActivity() {
         setContent {
             Clienteapp1Theme {
 
-                val cliente = Cliente(
-                    id = null,
-                    nome = "Cadastro Giovanna",
-                    email = "email@giovanna.dev.br"
-                )
+                ListaDeClientes()
 
-                val enviar = Conexao().getClienteService()
-                LaunchedEffect(Dispatchers.IO){
-                    enviar.cadastrarCliente(cliente).await()
-                }
+//                val cliente = Cliente(
+//                    id = null,
+//                    nome = "Cadastro Giovanna",
+//                    email = "email@giovanna.dev.br"
+//                )
+//
+//                val enviar = Conexao().getClienteService()
+//                LaunchedEffect(Dispatchers.IO){
+//                    enviar.cadastrarCliente(cliente).await()
+//                }
 
 //
 //                val enviar = Conexao().getClienteService()
